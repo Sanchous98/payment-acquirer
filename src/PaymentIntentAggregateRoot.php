@@ -142,8 +142,8 @@ class PaymentIntentAggregateRoot implements AggregateRootWithSnapshotting
 
         $this->recordThat(new PaymentIntentCaptured(
             $command->getAmount(),
-            isset($this->paymentMethodId) ? null : $command->getPaymentMethod()?->aggregateRootId(),)
-        );
+            isset($this->paymentMethodId) ? null : $command->getPaymentMethod()?->aggregateRootId(),
+        ));
 
         return $this;
     }
